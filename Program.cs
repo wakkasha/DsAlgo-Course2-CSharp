@@ -18,7 +18,8 @@ namespace DsAlgo_Course2_CSharp
 			tree.Insert(8);
 			tree.Insert(10);
 
-			Console.WriteLine("");
+			Console.WriteLine(tree.Find(21));
+			Console.ReadLine();
 
 			#endregion Tree
 		}

@@ -8,10 +8,7 @@
 			public Node leftChild;
 			public Node rightChild;
 
-			public Node(int value)
-			{
-				this.value = value;
-			}
+			public Node(int value) => this.value = value;
 
 			public override string ToString() => $"Node={value}";
 		}
@@ -21,7 +18,6 @@
 		public void Insert(int value)
 		{
 			var node = new Node(value);
-
 			if (root is null)
 			{
 				root = node;
@@ -52,6 +48,19 @@
 			}
 		}
 
-		// find
+		public bool Find(int value)
+		{
+			var current = root;
+			while (current != null)
+			{
+				if (value < current.value)
+					current = current.leftChild;
+				else if (value > current.value)
+					current = current.rightChild;
+				else
+					return true;
+			}
+			return false;
+		}
 	}
 }
